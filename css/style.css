@@ -1,0 +1,1252 @@
+/*!important*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+
+body{
+	font-family : "HanHei SC","PingFang SC","Helvetiac Nane","Helvetica";
+	background: #eee;
+}
+.clearfix:after{
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.placeholder {
+	position: absolute;
+	top: 20px;
+	z-index: 10;
+	color: #888;
+	font-size: 40px;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+a:focus{
+	text-decoration: none;
+}
+/*改善bootstrap的布局开始*/
+.clcickP{
+	cursor:pointer!important;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+/*改善bootstrap的布局结束*/
+
+/*--------------------------fixed部分开始--------------------------------*/
+div.fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 100%;
+}
+
+/*--------------------------Header部分开始--------------------------------*/
+
+header{
+	background-color: #3c8dbc;
+}
+@media (max-width:550px) {
+	main.content-main .main-section .information .sample{
+		padding-top: 40px!important;
+	}
+	header{
+		background-color: #232121;
+	}
+	.fixed #nav-span{
+	    top: 80px!important;
+	}
+}
+header nav.header{
+	min-height: 50px;
+	position: relative;
+}
+header nav.header .nav-head{
+	height: 50px;
+	float: left;
+}
+@media (max-width:550px) {
+	header nav.header .nav-head{
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+header nav.header .nav-head a{
+	width: 161px;
+	height: 50px;
+	float: left;
+}
+header nav.header .nav-head .btn{
+	float: right;
+	height: 50px;
+	width: 50px;
+	display: none;
+	position: relative;
+}
+@media (max-width:550px) {
+	header nav.header .nav-head .btn{
+		display: block;
+	}
+}
+header nav.header .nav-head .btn span{
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+	background-color: rgb(246, 246, 246);
+}
+header nav.header .nav-head .btn span:nth-of-type(1){
+	left: 10px;
+	top: 10px;
+    transition: .5s;
+}
+header nav.header .nav-head .btn span:nth-of-type(1).active{
+	left: 12px;
+    top: 23px;
+    transform: rotate(-44deg);
+}
+header nav.header .nav-head .btn span:nth-of-type(2){
+	left: 10px;
+	top: 20px;
+	opacity:1;
+	transition: .5s;
+}
+header nav.header .nav-head .btn span:nth-of-type(2).active{
+	opacity: 0;
+}
+header nav.header .nav-head .btn span:nth-of-type(3){
+	left: 10px;
+	top: 30px;
+    transition: .5s;
+}
+header nav.header .nav-head .btn span:nth-of-type(3).active{
+	left: 13px;
+    top: 23px;
+    transform: rotate(42deg);
+}
+header nav.header ul.block{
+	position: absolute;
+	float: left;
+	widows: auto;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 175px;
+}
+@media (max-width:550px){
+	header nav.header ul.block{
+		display: none;
+	}
+}
+header nav.header ul.block li{
+	float: left;
+	list-style: none;
+	max-height: 50px;	
+	background-color: #3c8dbc;
+	z-index: 1;
+}
+header nav.header ul.block li:hover{
+    background-color: rgb(54, 127, 169);	
+}
+header nav.header ul.block li.rt-li{
+	float: right;
+	position: relative;
+	width: 80px;
+	height: 50px;
+	overflow: hidden;
+}
+header nav.header ul.block li.rt-li:hover{
+	overflow: visible;
+}
+header nav.header ul.block li a{
+	color: #fff;
+	font-weight:600;
+	height: 50px;
+	line-height: 50px;
+	padding:0 10px;
+	display: block;
+	width: 100%;
+}
+header nav.header ul.block li a i{
+	color: rgb(246, 246, 246);
+}
+header nav.header ul.block li.rt-li a{
+	width: 80px;
+	height: 50px;
+}
+header nav.header ul.block li a.none{
+	display: block;
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	border: 2px solid #c7cdd0;
+	border-radius:5px;
+	background: #fff;
+	color: #666;
+}
+header nav.header ul.block li a.none:hover,header nav.header ul.block li a.none.active{
+	background: #eee;
+}
+header nav.header ul.none{
+	display: none;
+	width: 100%;
+	border-top: 1px solid #fff;
+	float: left;
+	padding-top: 10px;
+	box-sizing: content-box;
+	margin-top: 10px;
+	padding-bottom: 20px;
+}
+header nav.header ul.none li{
+	list-style: none;
+}
+header nav.header ul.none li a{
+	color: rgb(246, 246, 246);
+}
+header nav.header ul.none li a.inline{
+	height: 40px;
+	line-height: 40px;
+	display: block;
+}
+header nav.header ul.none li:nth-of-type(4) a{
+	float: left;
+}
+header nav.header ul.none li a.dropOut{
+	height: 40px;
+	line-height: 40px;
+	margin-left: 30px;
+}
+/*--------------------------Header部分结束--------------------------------*/
+
+/*--------------------------section-nav部分开始--------------------------------*/
+
+div.fixed section{
+	background: #fff;
+	position: relative;
+	height: 45px;
+	overflow: hidden;
+}
+div.fixed section .sectionDiv-nav{
+	overflow: hidden;
+	min-height: 48px;
+	position: relative;
+	width: 100%;
+	overflow-x: scroll;
+	box-sizing: content-box;
+}
+div.fixed section .scroll{
+	height: 45px;
+	width: max-content;	
+	border-bottom: 3px solid #EEE;
+}
+div.fixed section .scroll .box{
+	width: 1500px;
+	height: 45px;
+	border-bottom: 3px solid #EEE;
+}
+div.fixed section .scroll a{
+	padding: 10px; 
+	float: left;
+	color: #4c4444;
+	font-size: 16px;
+	border-bottom: 3px solid #EEE;
+	transition:.5s;
+	height: 45px;
+	font-weight: bold;
+}
+div.fixed section .scroll a:hover{
+	border-color:#bbb;
+}
+div.fixed section .scroll a.active{
+	border-color:#333;
+}
+div.fixed section .scroll a i{
+	display: inline-block;
+	position: relative;
+	bottom: 10px;
+	left: -4px;
+	width: 20px;
+	height: 20px;
+	background-color: #f5a81b;/*#f39c12*/
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 50px;
+	font-style: normal;
+}
+div.fixed section .scroll a i.demand-i{
+	background-color: #00a65a;
+}
+.fixed #nav-span{
+	position: absolute;
+    right: 3px;
+    top: 60px;
+}
+
+/*--------------------------section-nav部分结束--------------------------------*/
+
+/*--------------------------fixed部分结束--------------------------------*/
+
+/*--------------------------分页bindingSample部分开始--------------------------------*/
+
+body.bindingSample main{
+	margin: 0;
+	padding-top: 50px;
+	box-sizing: content-box;
+	min-height: calc(100vh - 110px)
+}
+@media(max-width:600px){
+	body.bindingSample main{
+		line-height: 26px;
+	}
+}
+body.bindingSample main .title h2{
+	margin-bottom: 30px;
+}
+
+body.bindingSample main .title .font{
+    font-size: 30px;
+    color: #3379a1;
+    margin: 20px 0 10px 0;
+}
+body.bindingSample main .title em{
+	display: block;
+	padding-bottom: 10px;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 24px;
+    font-style:normal;
+    margin-top: 10px;
+}
+body.bindingSample main .input-button{
+	margin-top: 55px;
+}
+
+body.bindingSample main .input-button .input{
+	width: 550px;
+	position: relative;
+	display: inline-block;
+}
+body.bindingSample main .input-button .input .inputInfo{
+	position: relative;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border:1px solid #aaa;
+	padding: 10px 20px;
+	/*max-width: 140px;*/
+	background: #fff;
+	display: none;
+}
+body.bindingSample main .input-button .input .inputInfo #inputInfo{
+	font-weight: bold;
+	font-size: 40px;
+	color: #6d6464;
+}
+body.bindingSample main .input-button .input .inputInfo p{
+	position: absolute;
+	bottom: -20px;
+	left: 19px;
+	width: 0;
+	height: 0;
+	border-width:10px 10px 0;
+	
+	border-color:#986d6d transparent transparent;/*灰 透明 透明 */
+	border-style:solid;
+
+}
+@media (max-width:600px) {
+	body.bindingSample main .input-button .input{
+		
+		width: 300px!important;
+	}
+	body.bindingSample main .title h3{
+		font-size: 20px;
+		margin-top: 50px;
+	}
+	body.bindingSample main .title .font{
+	    font-size: 22px;   
+	}
+	body.bindingSample main .title em {
+		font-size: 20px;
+	}
+}
+@media (max-width:350px) {
+	body.bindingSample main .input-button .input{
+		width: 100%!important;
+	}
+}
+body.bindingSample main .input-button .input input{
+	padding: 7px 0 7px 10px;
+	margin-top: 10px;
+	width: 100%;
+    font-size: 3em;
+    background-color: #eee;
+    border: 0;
+    border-bottom:2px solid #aaa;
+    outline:none;
+
+    cursor: pointer;
+}
+@media (max-width:600px) {
+	body.bindingSample main .input-button .input input{
+		font-size:1.5em!important;
+	}
+	.placeholder{
+		font-size: 20px;
+		top: 20px;
+	}
+}
+.ime-disabled{
+	/*Chrome Safari*/
+	-webkit-ime-mode: auto | active | inactive | disabled;
+	/*Mozilla Firefox*/
+	-moz-ime-mode: auto | active | inactive | disabled;
+	/*Opera*/
+	-o-ime-mode: auto | active | inactive | disabled;
+	/*Internet Explorer*/
+	-ms-ime-mode: auto | active | inactive | disabled;
+	/*CSS3 Standard*/
+	ime-mode: auto | active | inactive | disabled;
+}	/* 屏蔽输入法 */
+
+#infoPrompt{
+	line-height: 16px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+#infoPrompt #yes{
+	color: #00a65a;
+	display: none;
+}
+#infoPrompt #no{
+	color: #dd4b39;
+	display: none;
+}
+body.bindingSample main .input-button .input s{
+	position: absolute;
+	background: #0d9ccc;
+	width: 0%;
+	height: 2px;
+	display: block;
+	left: 50%;
+	bottom: 0;
+	transform:translateX(-50%);
+}
+
+
+body.bindingSample main .input-button .button{
+	margin-top: 35px;
+}
+body.bindingSample main .input-button .button button{
+    background-color: #009ACD;
+    min-height: 58px;
+    min-width: 156px;
+    padding: 18px 36px;
+    border-radius: 2px;
+    transition:.5s;
+    color: #fff;
+    border: none;
+    font-size: 19px;
+}
+body.bindingSample main .input-button .button button:hover{
+	background-color: #005571;
+}
+body.bindingSample main .input-button p{
+	margin-top: 10px;
+	color: #6b6969;
+}
+
+body.bindingSample .form{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(7, 28, 43, 0.8);
+	z-index: 112;
+	display: none;
+}
+body.bindingSample .form .formTotal{
+	width: 900px;
+	position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    opacity: 0;
+}
+body.bindingSample .formTotal .info-header{
+	padding: 17px 20px;
+	font-size: 20px;
+	height: 57px;
+	position: relative;
+}
+body.bindingSample .formTotal .info-header .lf{
+	position: absolute;
+	left: 20px;
+	top: 14px;
+
+}
+body.bindingSample .formTotal .info-header .ct{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	font-weight: bold;
+}
+body.bindingSample .formTotal form{
+	position: relative;
+}
+body.bindingSample .formTotal .goAway{
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 9px;
+    color: #999;
+    z-index: 10;
+}
+body.bindingSample .formTotal .info .info-div{
+	display: none;
+
+}
+body.bindingSample .formTotal .info .info-div:nth-of-type(1){
+	display: block;	
+}
+body.bindingSample .formTotal .info .info-div input{
+	outline: none;
+}
+body.bindingSample .formTotal .info .info-div section{
+	width: 600px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+body.bindingSample .formTotal .info .info-div section.active{
+	padding: 70px 0 230px;
+}
+body.bindingSample .formTotal .info .info-div.one section{
+	
+}
+#nameJudgment{
+	display: block;
+	font-size: 16px;
+	color: #dd4b39;
+	margin-top: 20px;
+	height: 30px;
+	line-height: 30px;
+}
+#nameJudgment .green{
+	color: #00b900;
+}
+body.bindingSample .formTotal .info .info-div section h3{
+	font-size: 30px;
+}
+body.bindingSample .formTotal .info .info-div section h3 span{
+	color: #dd4b39;
+}
+body.bindingSample .formTotal .info .info-div.one h3{
+	margin-top: 0;
+}
+body.bindingSample .formTotal .info .info-div.one .answer{
+	margin-top: 40px;
+}
+body.bindingSample .formTotal .info .info-div.one #nameFailure{
+    font-size: 21px;
+    color: #dd4b39;
+    margin-top: 20px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+body.bindingSample .formTotal .info .info-div.one .answer select{
+	min-width: 450px;
+	border:1px solid #828181;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	padding-left: 10px;
+}
+body.bindingSample .formTotal .info .info-div.eight .radios>div{
+	position: relative;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    float: left;
+    margin-top: 20px;
+}
+body.bindingSample .formTotal .info .info-div.three .radios>div{
+	position: relative;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    float: left;
+    margin-top: 20px;
+}
+body.bindingSample .formTotal .info .info-div.three .radios input[type="radio"]{
+	z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+body.bindingSample .formTotal .info .info-div.three .radios label{
+	display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 50px;
+}
+body.bindingSample .formTotal .info .info-div.eight .radios input[type="radio"]{
+	z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+body.bindingSample .formTotal .info .info-div.eight .radios label{
+	display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 50px;
+}
+body.bindingSample .formTotal .info .info-div.two .name{
+	
+}
+body.bindingSample .formTotal .info .info-div.two .name label{
+	display: block;
+}
+body.bindingSample .formTotal .info .info-div.two .name input{
+	width: 200px;
+	height: 30px;
+	border: 0;
+	border-bottom: 1px solid #666;
+	font-size: 20px;
+	color: #666;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+body.bindingSample .formTotal .info .info-div.four{
+
+}
+body.bindingSample .formTotal .info .info-div.four .happening{
+
+}
+body.bindingSample .formTotal .info .info-div.four .happening .food{
+
+}
+body.bindingSample .formTotal .info .info-div.four .happening .food select{
+	width: 200px;
+	height: 30px;
+	padding-left: 10px;
+}
+body.bindingSample .formTotal .info .info-div.seven .happening .food select {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+body.bindingSample .formTotal .info .info-div.four .happening .note{
+	margin-top: 30px;
+}
+body.bindingSample .formTotal .info .info-div.four .happening .note h4{
+	font-size: 17px;
+}
+body.bindingSample .formTotal .info .info-div.four .happening .note textarea{
+	max-width: 437px;
+	max-height: 118px;
+	width: 437px;
+	height: 118px;
+	padding-left: 10px;
+	border: 1px solid #b5a4a4;
+	margin-top: 10px;
+}
+body.bindingSample .formTotal .info .info-div.four .happening .note em{
+	color: #dd4b39;
+	font-style: normal;
+	display: block;
+}
+
+body.bindingSample .formTotal .info .info-div.five .Pull .stoolday>div span{
+	float: left;
+	margin-right: 10px;
+}
+body.bindingSample .formTotal .info .info-div.five .Pull .stoolday .stooldaytime{
+	margin-bottom: 20px;
+}
+
+body.bindingSample .formTotal .info .info-div.five .Pull select{
+	width: 200px;
+	height: 30px;
+	padding-left: 10px;
+	float: left;
+}
+body.bindingSample .formTotal .info .info-div.five .shape{
+	margin-top: 30px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape h4{}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea{
+	width: 50%;
+	height: 53px;
+	position: relative;
+    float: left;
+    margin: 10px 0
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea input{
+	z-index: 3;
+    position: absolute;
+    
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(2n-1) input{
+	left: -50px;
+    top: 15px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(2n) input{
+	left: 10px;
+    top: 15px;
+}
+body.bindingSample .formTotal .info .info-div.five section{
+	padding: 0;
+
+}
+body.bindingSample .formTotal .info .info-div{
+	box-sizing: content-box;
+	background: #fff;
+}
+body.bindingSample .formTotal .info .info-div.five{
+	padding-bottom: 90px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea label{
+	position: absolute;
+	height: 53px;
+	display: block;
+    width: 300px;
+    cursor: pointer;
+    background-image: url(../images/stooltype.png);
+    background-repeat: no-repeat;
+    -webkit-background-size:311px 420px ;
+    background-size:311px 420px ;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(2n-1) label{
+
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(2n) label{
+	
+	left: 50px;
+	top: 0;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(1) label{
+	background-position: 0 0;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(2) label{
+	background-position: 0 -60px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(3) label{
+	background-position: 0 -120px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(4) label{
+	background-position: 0 -180px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(5) label{
+	background-position: 0 -240px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(6) label{
+	background-position: 0 -304px;
+}
+body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(7) label{
+	background-position: 0 -364px;
+}
+body.bindingSample .info-div.six .Score{}
+body.bindingSample .info-div.six .star {
+	height: 30px;
+}
+body.bindingSample .info-div.six  .MultipleChoice{}
+body.bindingSample .info-div.six .disease{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	color: #666;
+	min-width: 250px;
+}
+body.bindingSample .info-div.six .disease input{
+	float: left;
+	cursor: pointer;
+	margin-top: 8px;
+}
+body.bindingSample .info-div.six .disease label{
+	float: left;
+	cursor: pointer;
+	min-width: 200px;
+	padding-left: 10px;
+	position: relative;
+	right: 0px;
+}
+#czy i{
+	font-size: 18px;
+	cursor: pointer;
+	margin: 0 2px;
+}
+
+body.bindingSample .formTotal .info-bottom{
+	margin: 0 30px 10px;
+	position: relative;
+	height: 68px;
+}
+
+body.bindingSample .formTotal .info-bottom .bindingButton{
+	position: absolute;
+	right: 50%;
+	top: 0;
+	transform:translate(50%,0);
+	width: 180px;
+	height: 68px;
+	line-height: 68px;
+	font-size: 20px;
+	border-radius:5px;
+	border: none;
+	text-align: center;
+}
+body.bindingSample .formTotal .info-bottom .bindingButton.failure{
+	background: #fff;
+	color: #aaa;
+	cursor: no-drop;
+}
+body.bindingSample .formTotal .info-bottom .bindingButton.failure:hover{
+	color: #fff;
+	background: #aaa;
+}
+body.bindingSample .formTotal .info-bottom .bindingButton.success{
+	color: #009ACD;
+	background: #fff;
+}
+body.bindingSample .formTotal .info-bottom #bindingSample.success{
+	background: #009ACD;
+	color: #fff;
+}
+body.bindingSample .formTotal .info-bottom a{
+	padding: 20px 30px;
+	background-color: #fff;
+	color: #ff9921;
+	border: none;
+	font-size: 20px;
+	border-radius:5px;
+}
+body.bindingSample .formTotal .info-bottom a.failure{
+	color: #aaa;
+	background: #fff;
+}
+body.bindingSample .formTotal .info-bottom a.failure:hover{
+	color: #fff;
+	background: #aaa;
+}
+body.bindingSample .formTotal .info-bottom a:hover{
+	background: #ff9921;
+	color: #fff;
+	font-weight: bold;
+}
+body.bindingSample .formTotal .info-bottom a i{
+	margin:0 5px;
+}
+body.bindingSample .formTotal .info-bottom a.prev{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+body.bindingSample .formTotal .info-bottom a.next{
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor:pointer; 
+	opacity: 1;
+	transform: translate(0)
+}
+.requiredSpan{
+	font-size: 20px;
+    margin-top: 10px;
+    color: #e03a3a;
+    display: block;
+}
+@media (max-width:1000px) {
+	body.bindingSample .form .formTotal{
+		width: 700px!important;
+	}
+	body.bindingSample .formTotal .info .info-div.five .shape .nausea{
+		width: 100%;
+	}
+	body.bindingSample .formTotal .info .info-div.five .shape .nausea:nth-of-type(2n) label{
+		left: 0;
+	}
+	body.bindingSample .formTotal .info .info-div.five .shape .nausea input{
+	    left: 0px!important;
+	    top: 15px!important;
+	}
+	body.bindingSample .formTotal .info .info-div.five .shape label{
+		left: 50px!important;
+	}
+	body.bindingSample .formTotal .info .info-div section h3 {
+		font-size: 23px!important;
+	}
+	body.bindingSample .formTotal .info .info-div.one #nameFailure{
+		font-size: 18px!important;
+	}
+	body.bindingSample .formTotal .info-bottom a{
+		padding: 10px 15px;
+	}
+	body.bindingSample .formTotal .info-bottom .bindingButton{
+		width: 140px!important;
+		height: 45px!important;
+		line-height: 45px!important;
+	}
+	body.bindingSample .form .box{
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+		background: #fff;
+	}
+	.requiredSpan{
+		font-size: 15px!important;
+	}
+}
+@media (max-width:800px) {
+	body.bindingSample .form .formTotal{
+		width: 600px!important;
+	}
+	.info section{
+	    padding-left: 50px!important;
+		padding-right: 50px!important;
+		/*text-align: center;*/
+	}
+	body.bindingSample .formTotal .info .info-div section.active{
+		padding-bottom: 50px;
+	}
+	body.bindingSample .formTotal .info-bottom a{
+		font-size: 17px!important;
+	}
+	body.bindingSample .formTotal .info-bottom .bindingButton{
+		font-size: 17px!important;
+	}
+}
+@media (max-width:700px) {
+	body.bindingSample .form form{
+		width: 100%;
+		height: 100%;
+	}
+	body.bindingSample .form .formTotal{
+		width: 100%!important;
+		height: 100%!important;
+	}
+	body.bindingSample .info-bottom{
+
+	}
+	
+	body.bindingSample .formTotal .info .info-div.five {
+    	padding-bottom: 20px!important;
+	}
+}
+
+@media (max-width:600px) {
+
+	body.bindingSample .formTotal .info .info-div section h3 {
+		font-size: 18px!important;
+	}
+	body.bindingSample .formTotal .info .info-div.one .answer select{
+		max-width: 80%;
+		    font-size: 15px;
+	}
+	.info section{
+	    padding-left: 100px!important;
+		padding-right: 15px!important;
+		/*text-align: center;*/
+	}
+	body.bindingSample .formTotal .info .info-div section{
+		width: 100%;
+	}
+	body.bindingSample .formTotal .info .info-div.four .happening .note textarea{
+		width: 100%;
+	}
+	body.bindingSample .formTotal .info-bottom{
+		margin: 0 10px 10px!important;
+	}
+}
+@media (max-width:580px){
+	.info section{
+	    padding-left: 70px!important;
+		padding-right: 15px!important;
+		/*text-align: center;*/
+	}
+	body.bindingSample .formTotal .info .info-div.one .answer select{
+		width: 300px!important;
+		max-width: 300px!important;
+		min-width: 300px!important;
+	}
+}
+@media (max-width:500px) {
+.info section{
+	    padding-left: 30px!important;
+		padding-right: 15px!important;
+		/*text-align: center;*/
+	}
+	.Instructions-content-two .like p{
+
+	}
+	.Instructions-content-two .like p span.one{
+	    position: relative;
+    	right: 20px;
+	}
+	.Instructions-content-two .like p span.two{
+		left: 131px!important;
+		right: 128px!important;
+	}
+	.Instructions-content-two .like p span.three{
+		position: relative;
+		left: 40px;
+	}
+	.Instructions-content-two .like p span.four{
+		position: relative;
+		left: 20px;
+	}
+}
+@media (max-width:400px) {
+	body.bindingSample .formTotal .info-bottom .bindingButton {
+        width: 95px!important;
+		height: 35px!important;
+		line-height: 35px!important;
+	    font-size: 13px!important;
+	    top: 10px!important;
+	}
+	.Instructions-content-two .like p{
+		overflow: hidden;
+	}
+	.Instructions-content-two .like p span.one{
+	    position: relative;
+    	right: -13px;/*35px*/
+    	width: 77px!important;
+	}
+	.Instructions-content-two .like p span.two{
+	    left: 94px!important;
+   		right: 99px!important;
+	}
+	.Instructions-content-two .like p span.three{
+		position: relative;
+		left: 40px;
+	}
+	.Instructions-content-two .like p span.four{
+		position: relative;
+		left: 20px;
+		width: 77px!important;
+	}
+	.Instructions-content-two .like p span{
+		font-size: 14px!important;
+	}
+	
+	.Instructions-content-two .like{
+		padding: 40px 10px 20px 10px!important;
+	}
+	.info .info-div.five section{
+	    padding-left: 0!important;
+	    padding-right: 0!important;
+	}
+	body.bindingSample .formTotal .info .info-div.five .shape .nausea input{
+	    left: 10px!important;
+    	top: 15px!important;
+	}
+	body.bindingSample .formTotal .info .info-div.five .Pull,body.bindingSample .formTotal .info .info-div.five .shape h4{
+		padding-left: 30px!important;
+	    padding-right: 15px!important;
+	}
+	body.bindingSample .formTotal .info-bottom a{
+		top: 10px!important;
+		font-size: 13px!important;
+	}
+	body.bindingSample .formTotal .info-bottom a.next{
+		padding: 8px 10px 8px 12px;
+	}
+	body.bindingSample .formTotal .info-bottom a.prev{
+		padding: 8px 12px 8px 10px;
+	}
+	body.bindingSample .formTotal .info-bottom {
+    	 margin: 0 10px!important; 
+	}
+
+	/*1847*/
+}
+@media (max-width:360px) {
+	body.bindingSample .formTotal .info .info-div.five .shape .nausea input{
+		width: 20px;
+		height: 20px;
+
+	}
+	body.bindingSample .formTotal .info .info-div.five .shape .nausea label{
+	    background-size: 262px 418px;
+        height: 53px;
+	    width: 250px;
+	}
+	body.bindingSample .formTotal .info .info-div.one .answer select {
+	    width: 200px!important;
+	    max-width: 200px!important;
+	    min-width: 200px!important;
+	}
+}
+@media(max-width: 300px) {
+	.container{
+		padding: 0!important;
+	}
+}
+
+
+body.bindingSample #End{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	z-index: 100;
+}
+body.bindingSample #End .box{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+body.bindingSample #End #End-content{
+	width: 700px;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%,-50%);
+	padding: 50px 100px 100px 100px;
+	background: #fff;
+	opacity: 0;
+	transition:.5s;
+}
+body.bindingSample #End #End-content.active{
+	top: 50%;
+	opacity: 1;
+}
+body.bindingSample #End span{
+	font-size: 20px;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+	position: relative;
+	bottom: 20px;
+	right: 50px;
+}
+body.bindingSample #End span i{
+	color: #000;
+	margin-right:10px;
+}
+body.bindingSample #End span:hover,body.bindingSample #End span:hover i{
+	color: #1d9d74;
+
+}
+body.bindingSample #End h1{
+	text-align: center;
+	margin-top: 50px;
+    
+}
+@media(max-width:1000px){
+	body.bindingSample #End h1{
+		font-size: 18px!important;
+		margin-top: 200px!important;
+		padding: 0 20px;
+		text-align: center;
+	}
+	#End-content{
+		padding: 0!important;
+	}
+	#EndReturn{
+		font-size: 17px!important;
+		top: 10px;
+		left: 10px;
+		bottom: 0!important;
+		right: 0!important;
+	}
+	body.bindingSample #End #End-content{
+		width: 100%!important;
+		height: 100%!important;
+	}
+	body.bindingSample #End .EndBtn a{
+		padding: 10px!important;
+	    border-radius: 7px!important;
+	    margin-left: 20px;
+	    font-size: 15px!important;
+	}
+}
+body.bindingSample #End .EndBtn{
+	margin-top:100px;
+	width: 100%;	
+}
+body.bindingSample #End .EndBtn a{
+	padding: 20px 20px;
+	border-radius: 10px;
+	margin-right: 20px;
+	background: #ff9921;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+body.bindingSample #End .EndBtn a:nth-of-type(1){
+	float: left;
+}
+body.bindingSample #End .EndBtn a:nth-of-type(2){
+	float:right;
+}
+
+
+/*--------------------------分页bindingSample部分结束--------------------------------*/
+
+
+/*--------------------------footer部分开始--------------------------------*/
+
+footer{
+	padding: 20px 0;
+	background-color:#222222;
+	z-index: 200;
+	text-align: center;
+	color: #fff;
+}
+footer a{
+	color: #00c2a9;
+}
+
+/*--------------------------footer部分结束--------------------------------*/

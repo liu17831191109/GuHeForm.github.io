@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<title>谷禾健康&nbsp;&nbsp;肠道菌群检测&nbsp;&nbsp;样品绑定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- 引入bootstrap开源框架 -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- 引入字体图标 -->
+<link rel='stylesheet' id='font-awesome-css'  href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/fonts/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/root.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bindingSample">
+	<div class="fixed">
+		<header>
+			<div class="container">
+				<nav class="header clearfix">
+					<div class="nav-head">
+						<a href="www.guhejk.com"><img src="images/logo.png" alt=""></a>
+						<div class="btn">
+							<span class="one"></span>
+							<span class="two"></span>
+							<span class="three"></span>
+						</div>
+					</div>
+					<ul class="block">
+						<li><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="点击查阅检测结果">查看报告</a></li>
+						<li><a href="bindingSample.html" data-toggle="tooltip" data-placement="bottom" title="点击绑定样品管编号">绑定样品</a></li>
+						<li><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.13.3FGRtr&id=541956328204&ns=1&abbucket=3#detail" data-toggle="tooltip" data-placement="bottom" title="点击购买新的取样盒">点击购买</a></li>
+						<li class="rt-li">
+							<a href="#">
+							<i class="fa fa-user-md"></i>
+							<span>登录</span>
+							</a>
+		
+							<a href="#" class="none">
+								退出								
+							</a>
+						</li>
+					</ul>
+					<ul class="none">
+						<li><a href="index.html" class="inline">查看报告</a></li>
+						<li><a href="bindingSample.html" class="inline">绑定样品</a></li>
+						<li><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.13.3FGRtr&id=541956328204&ns=1&abbucket=3#detail" class="inline">点击购买</a></li>
+						<li>
+							<a href="#" class="inline"><i class="fa fa-user-md"></i>
+							<span>登录</span></a>
+							<a href="#" class="dropOut">退出</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+	</div>
+	<main>
+		<div class="container">
+			<div class="title">
+				<h2>绑定样本</h2>
+				<br>
+				<font class="font">让我们激活您的取样管</font>
+				<em>请输入您的取样管上的9位数编号。</em>
+				<em>信息错误可重新绑定修改,每个账号可以绑定多个样品</em>
+			</div>
+			
+				<div class="input-button">
+					<div class="input">
+						<input type="text"  onpaste="return false" ondragstart="return false" autofocus="autofocus" name="user" placeholder=" 请输入取样管数字编码" maxlength="11" id="user"  autocomplete="off">
+					</div>
+					<div id="infoPrompt">
+						<span id="yes">您输入的取样管编号正确!</span>
+						<span id="no"></span>
+					</div>
+					<div class="button">
+						<button id="carryOn" type="button" onclick="loadXMLDoc(userIdOld.value)">
+							继续
+						</button>
+					</div>	
+					<p>请务必输入样品管编号，否则将无法得到您的报告！</p>
+				</div>					
+					
+		</div>
+	</main>
+
+	<!-- 问题弹框开始 -->
+	<div class="form">
+        <div class="formTotal">
+        	<form action="" id="form1" method="get" onsubmit="return checkForm()">
+        		<input type="text" value="" hidden name="sampleid" id="userId">
+        		<span class="goAway"><i class="fa fa-close click"></i></span>
+	        	
+		        <div class="info-header">
+		        	<div class="lf">绑定样品</div> 
+		        	<div class="ct">
+		        		当前是 <span id="current"></span>/<span id="totalPage"></span>
+		        	</div>
+		        </div>
+
+	        	<div class="info" id="info">
+	        		<div class="info-div one">
+						<section class="active">
+							<h3 id="problem">年龄<span>*必填</span></h3>
+							<div class="answer" id="answer">
+								<select name="age" id="userAge" onchange="infoNextUserAge()">	
+									<option value="请选择您的年龄*必填">请选择年龄*必填</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									<option value="61">61</option>
+									<option value="62">62</option>
+									<option value="63">63</option>
+									<option value="64">64</option>
+									<option value="65">65</option>
+									<option value="66">66</option>
+									<option value="67">67</option>
+									<option value="68">68</option>
+									<option value="69">69</option>
+									<option value="70">70</option>
+									<option value="71">71</option>
+									<option value="72">72</option>
+									<option value="73">73</option>
+									<option value="74">74</option>
+									<option value="75">75</option>
+									<option value="76">76</option>
+									<option value="77">77</option>
+									<option value="78">78</option>
+									<option value="79">79</option>
+									<option value="80">80</option>
+									<option value="81">81</option>
+									<option value="82">82</option>
+									<option value="83">83</option>
+									<option value="84">84</option>
+									<option value="85">85</option>
+									<option value="86">86</option>
+									<option value="87">87</option>
+									<option value="88">88</option>
+									<option value="89">89</option>
+									<option value="90">90</option>
+									<option value="91">91</option>
+									<option value="92">92</option>
+									<option value="93">93</option>
+									<option value="94">94</option>
+									<option value="95">95</option>
+									<option value="96">96</option>
+									<option value="97">97</option>
+									<option value="98">98</option>
+									<option value="99">99</option>
+									<option value="100">100</option>
+									<option value="101">101</option>
+									<option value="102">102</option>
+									<option value="103">103</option>
+									<option value="104">104</option>
+									<option value="105">105</option>
+									<option value="106">106</option>
+									<option value="107">107</option>
+									<option value="108">108</option>
+									<option value="109">109</option>
+									<option value="110">110</option>
+									<option value="111">111</option>
+									<option value="112">112</option>
+									<option value="113">113</option>
+									<option value="114">114</option>
+									<option value="115">115</option>
+									<option value="116">116</option>
+									<option value="117">117</option>
+									<option value="118">118</option>
+									<option value="119">119</option>
+									<option value="120">120</option>						</select>
+							</div>
+							<div id="nameFailure"></div>
+						</section>
+	        		</div>
+	        		<div class="info-div two">
+	        			<section class="active">
+	        				<div class="name">
+	        					<label for="name"><h3>姓名</h3></label>
+	        					<!-- onkeyup="nameKeyup(this.value)" 姓名检测键盘按下事件 maxlength="3"-->
+	        					<input type="text" maxlength="15" name="sampleusername"  id="name" onkeyup="nameKeyup(this.value)">
+	        					<span id="nameJudgment"><!-- 请输入二到三个汉字 !  --></span>
+	        				</div>
+	        				
+	        			</section>
+	        		</div>
+	        		<div class="info-div three">
+	        			<section class="active">
+	        				<div class="radios clearfix">
+	        					<h3>性别</h3>
+	        					<div>
+	        						<input type="radio" name="sex" value="boy" id="radioMale">
+	        						<label for="radioMale">男</label>
+	        					</div>
+	        					<div>
+	        						<input type="radio" name="sex" value="girl" id="radioFemale">
+	        						<label for="radioFemale">女</label>
+	        					</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        		<div class="info-div four">
+	        			<section>
+	        				<div class="happening">
+	        					<div class="food">
+	        						<h3>您半年内的饮食情况</h3>
+	        						<select id="userFoodOne" name="diet" onchange="userFoodOnee()">
+	        							<option value=""></option>
+	        							<option value="海鲜为主">海鲜为主</option>
+	        							<option value="肉食为主">肉食为主</option>
+	        							<option value="素食为主">素食为主</option>
+	        							<option value="均衡杂食">均衡杂食</option>
+	        							<option value="纯素食">纯素食</option>
+	        						</select>
+	        					</div>
+	        					<div class="note">
+	        						<h4>备注，可以记录取样当时的一些健康和身体状况以便事后回忆</h4>
+									<textarea name="comment" id="textareaFood" value="" onkeyup="textareaFd()" maxlength="15" value="" cols="30" rows="10" placeholder="  备注 , 例如 : 腹泻 , 可能食物中毒 ... "></textarea>
+									
+	        					</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        		<div class="info-div five">
+	        			<section>
+	        				<div class="happening">
+	        					<div class="Pull">
+	        						<h3>排便情况</h3>
+	        						<div class="stoolday clearfix">
+	        							<div class="stooldaytime clearfix">
+	        								<span>几天一次 : </span>
+	        								<select id="userfecess" name="stooldaytime" onchange="userfecesss()">
+			        							<option value=""></option>
+			        							<option value="1">一天一次</option>
+			        							<option value="2">两天一次</option>
+			        							<option value="3">三天一次</option>
+			        							<option value="4">四天一次</option>
+			        							<option value="5">四天以上一次</option>
+			        						</select>
+	        							</div>
+	        							<div class="stooltimeday clearfix">
+	        								<span>一天几次 : </span>
+	        								<select id="userfeces" name="stooltimeday" onchange="userfecess()">
+	        									<option value=""></option>
+			        							<option value="1">一天一次</option>
+			        							<option value="2">一天两次</option>
+			        							<option value="3">一天三次</option>
+			        							<option value="4">一天四次</option>
+			        							<option value="5">一天四次以上</option>
+			        						</select>
+	        							</div>
+	        						</div>
+	        						
+	        					</div>
+	        					<div class="shape clearfix">
+	        						<h4>本次粪便形状？（单选）</h4>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesOne" value="一颗颗硬球（很难通过）">
+	        							<label for="fecesOne"></label>
+	        						</div>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesTwo" value="香肠状,但表面凹凸">
+	        							<label for="fecesTwo"></label>
+	        						</div>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesThree" value="香肠状，但表面有裂痕">
+	        							<label for="fecesThree"></label>
+	        						</div>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesFour" value="像香肠或者蛇一样，且表面光滑">
+	        							<label for="fecesFour"></label>
+	        						</div>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesFive" value="断边光滑的柔软状（容易通过）">
+	        							<label for="fecesFive"></label>
+	        						</div>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesSix" value="粗边蓬松块，糊状大便">
+	        							<label for="fecesSix"></label>
+	        						</div>
+	        						<div class="nausea">
+	        							<input type="radio" name="stooltype" id="fecesSeven" value="水状，无固体块（完全呈液体状）">
+	        							<label for="fecesSeven"></label>
+	        						</div>
+	        					</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        		<div class="info-div six">
+	        			<section>
+	        				<div class="happening">
+	        					<div class="Score">
+	        						<input type="text" hidden name="healthscore" value="" id="star">
+	        						<h4>对您自己的健康状况打分，5星最健康</h4>
+	        						<div class="star">
+	        							<table id ="czy">
+										    <tr>
+										        <td title="差"><i class="fa fa-star"></i></td>
+										        <td title="较差"><i class="fa fa-star"></i></td>
+										        <td title="普通"><i class="fa fa-star"></i></td>
+										        <td title="好"><i class="fa fa-star"></i></td>
+										        <td title="较好"><i class="fa fa-star"></i></td>
+										    </tr>
+										</table>
+	        						</div>
+	        					</div>
+	        					<div class="MultipleChoice clearfix">
+	        						<h4>你可以选择是否存在以下疾病或生活状况：</h4>
+									<div class="disease">
+										<input type="checkbox" name="gutp1" value="" id="checkboxOne">
+	        							<label for="checkboxOne">腹痛、肠胃不适或腹泻</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="gutp2" value="" id="checkboxTwo">
+	        							<label for="checkboxTwo">严重便秘</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="fat" value="" id="checkboxThree">
+	        							<label for="checkboxThree">肥胖</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="diebate2" value="" id="checkboxFour">
+	        							<label for="checkboxFour">II型糖尿病</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="brain" value="" id="checkboxFive">
+	        							<label for="checkboxFive">心脑血管疾病（不包括高血压）</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="allergy" value="" id="checkboxSix">
+	        							<label for="checkboxSix">过敏</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="stomach" value="" id="checkboxSevent">
+	        							<label for="checkboxSevent">胃病</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="RA" value="" id="checkboxEight">
+	        							<label for="checkboxEight">类风湿性关节炎</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="depress" value="" id="checkboxNine">
+	        							<label for="checkboxNine">抑郁症</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="autism" value="" id="checkboxTen">
+	        							<label for="checkboxTen">自闭症</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="MS" value="" id="checkboxYi">
+	        							<label for="checkboxYi">老年痴呆</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="cancer" value="" id="checkboxEr">
+	        							<label for="checkboxEr">癌症</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="PD" value="" id="checkboxSan">
+	        							<label for="checkboxSan">帕金森</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="Thyroid" value="" id="checkboxSi">
+	        							<label for="checkboxSi">甲状腺疾病</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="kidney" value="" id="checkboxWu">
+	        							<label for="checkboxWu">肾炎</label>
+									</div>
+									<div class="disease">
+										<input type="checkbox" name="Lung" value="" id="checkboxLiu">
+	        							<label for="checkboxLiu">肺部感染</label>
+									</div>
+	        						
+
+	        					</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        		
+	        	</div>
+				<div class="box">
+					<div class="info-bottom clearfix">
+		        		<a href="javascript:;" class="prev" id="infoPrev">
+		        			<i class="fa fa-chevron-left"></i>上一步
+		        		</a>
+		        		<!-- failure 是灰字，灰背景 success 成功的样式 -->
+		        		<span id="bindingSample" onclick="tijiao()" class="bindingButton failure">直接绑定样品</span>
+		        		<a href="javascript:;" class="next failure" id="infoNext"><span id="nextSpan">下一步</span><i class="fa fa-chevron-right"></i></a>
+		        	</div>
+				</div>
+	        	
+	        	<div class="confirm">
+	        		
+	        	</div>
+	        </form>
+        </div>
+        
+	</div>
+	<!-- 问题弹框结束 -->
+
+	<!-- 结束弹框开始 -->
+	
+	<div id="End">
+		<div class="box">
+			<div id="End-content">
+				<span id="EndReturn"><i class="fa fa-mail-reply"></i>返回</span>
+				<h1 id="EndH1"></h1>
+				<div class="EndBtn clearfix">
+					<a href="http://www.guhejk.com/sampletable.php" id="EndBtnOne">查看已绑定样品</a>
+					<a href="javascript:void(0)" id="EndBtnTwo">重新绑定</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 结束弹框结束 -->
+
+	<footer>
+		<div class="container">
+			Copyright @ 2012-2018 - 谷禾健康. Designed by <a href="http://www.guhejk.com/">谷禾</a>  浙ICP备16027306号-1 <a href="http://www.guhejk.com/policy.html">隐私声明</a>
+		</div>
+	</footer>
+
+	<!-- 引入jQuery 源文件 -->
+	<!-- <script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script> -->
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<!-- 引入bootstrap.min.js -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bindForm.js"></script>
+	<script src="js/bindFormJQ.js"></script>
+	<script src="js/plugins.js"></script>
+    <script type="text/javascript">
+    	$("body").keydown(function(event) {
+		     if (event.keyCode == "13") {//keyCode=13是回车键
+		         loadXMLDoc(userIdOld.value);
+		     }
+		 });
+		function loadXMLDoc(userID)
+		{
+			//通过表单对象创建 FormData
+		  	// var fd = new FormData(document.getElementById("formsId"));
+	  		// var fd = document.getElementById("user").value;
+		  	//XMLHttpRequest 原生方式发送请求
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+				//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+				xmlhttp=new XMLHttpRequest();
+			}
+			else
+			{
+				// IE6, IE5 浏览器执行代码
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function()
+			{
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				{
+					console.log(xmlhttp.responseText);
+					var personData = JSON.parse(xmlhttp.responseText); 
+					typesOf = personData.codeType
+					if(personData.status == 1 || personData.status == 2){
+						document.getElementById("no").style.display = "none";
+						document.getElementById("yes").style.display = "block";
+						forms();
+					}else if(personData.status == 3 || personData.status == 4) {
+						document.getElementById("no").style.display = "block";
+						document.getElementById("no").innerHTML = personData.msg;
+						document.getElementById("yes").style.display = "none";
+						document.getElementById("user").value = "";
+						document.getElementById("inputInfo").innerHTML = "";
+					}
+					return typesOf
+				}
+
+			}
+			xmlhttp.open("get","http://www.guhejk.com/codebindcheck.php?sampleid="+userID,true);
+			xmlhttp.send();
+		}
+    </script>
+  <script>
+    $(function() {
+ 
+      $('#user').on('keyup', function(e) {
+       //只对输入数字时进行处理
+        if((e.which >= 48 && e.which <= 57) ||
+            (e.which >= 96 && e.which <= 105 )){
+          //获取当前光标的位置
+          var caret = this.selectionStart
+          //获取当前的value
+          var value = this.value
+          //从左边沿到坐标之间的空格数
+          var sp = (value.slice(0, caret).match(/\s/g) || []).length
+          //去掉所有空格
+          var nospace = value.replace(/\s/g, '')
+          //重新插入空格
+          var curVal = this.value = nospace.replace(/(\d{3})/g, "$1 ").trim()
+          //从左边沿到原坐标之间的空格数
+          var curSp = (curVal.slice(0, caret).match(/\s/g) || []).length
+         //修正光标位置
+         this.selectionEnd = this.selectionStart = caret + curSp - sp
+        }
+      })
+    })
+  </script>
+</body>
+</html>
